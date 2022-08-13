@@ -1,0 +1,13 @@
+<body class="bg-color-primary">
+<section class="container-xxl">
+  <div class="p-5 text-center">
+    <h1 class="mb-0 text-white text-capitalize">Watching the most amazing film in SocialFilm</h1>
+    <h4 class="mb-3 text-light text-opacity-75">By. Enzo Livelli</h4>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-3 col-lg-2" *ngFor="let film of dataSource.data">
+      <app-card [data]="film"></app-card>
+    </div>
+  </div>
+</section>
+</body>
