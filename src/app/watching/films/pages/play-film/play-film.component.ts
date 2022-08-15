@@ -1,36 +1,33 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Film} from "../../watching/films/model/film";
+import {Film} from "../../model/film";
 import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-play-film',
+  templateUrl: './play-film.component.html',
+  styleUrls: ['./play-film.component.css']
 })
-export class CardComponent implements OnInit {
+export class PlayFilmComponent implements OnInit {
 
   @Input() data!: Film
   urlVideo?:SafeUrl
   idVideo?: string
   embed: string = "https://www.youtube.com/embed/"
 
-  constructor(private _sanitizer:DomSanitizer, private router:Router) {
+  constructor(private _sanitizer:DomSanitizer) {
+    this.data = {} as Film
   }
-
   ngOnInit(): void {
     this.urlVideo = this._sanitizer.bypassSecurityTrustResourceUrl(this.formatVideo())
   }
 
   formatVideo() {
     var url = this.data.video.videoUrl
+    console.log(url)
     this.idVideo = url.substring(+32)
-    var result = this.embed + this.idVideo +"?rel=0"
+    var result = this.embed + this.idVideo + "?rel=0"
+    var temp = this.embed + "gNAdnYTcgUo&t" + "?rel=0"
     console.log(result)
     return result
-  }
-
-  onSelectFilm(element:Film){
-    this.router.navigate(['/films', element.id])
   }
 }

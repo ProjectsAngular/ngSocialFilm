@@ -11,13 +11,23 @@ import { FilmsComponent } from './watching/films/pages/films/films.component';
 import { CardComponent } from './shared/card/card.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import { FilmDetailComponent } from './watching/films/pages/film-detail/film-detail.component';
+import { ButtonComponent } from './shared/button/button.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatIconModule} from "@angular/material/icon";
+import { FilmsRelatedComponent } from './watching/films/pages/films-related/films-related.component';
+import { PlayFilmComponent } from './watching/films/pages/play-film/play-film.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FilmsComponent,
-    CardComponent
+    CardComponent,
+    FilmDetailComponent,
+    ButtonComponent,
+    FilmsRelatedComponent,
+    PlayFilmComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +36,8 @@ import {MatButtonModule} from "@angular/material/button";
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatIconModule,
   ],
   providers: [CategoriesService],
   bootstrap: [AppComponent]
