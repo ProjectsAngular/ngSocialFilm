@@ -1,20 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {Film} from "../../model/film";
 import {FilmsService} from "../../services/films.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {Film} from "../../model/film";
-import {Video} from "../../../videos/model/video";
-import {SafeUrl} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-film-detail',
-  templateUrl: './film-detail.component.html',
-  styleUrls: ['./film-detail.component.css']
+  selector: 'app-support-film',
+  templateUrl: './support-film.component.html',
+  styleUrls: ['./support-film.component.css']
 })
-export class FilmDetailComponent implements OnInit {
+export class SupportFilmComponent implements OnInit {
 
   filmData: Film;
-
-  componentName?: string = 'related';
 
   constructor(private filmsServices: FilmsService, private route: ActivatedRoute, private router: Router) {
     this.filmData = {} as Film
@@ -40,7 +36,4 @@ export class FilmDetailComponent implements OnInit {
     this.router.navigate(['/films', element.id, 'watch'], {queryParams: {"videoId": idVideo}})
   }
 
-  onKey(componentName: string): void {
-    this.componentName = componentName;
-  }
 }

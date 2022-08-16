@@ -17,6 +17,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatIconModule} from "@angular/material/icon";
 import { FilmsRelatedComponent } from './watching/films/pages/films-related/films-related.component';
 import { PlayFilmComponent } from './watching/films/pages/play-film/play-film.component';
+import { SupportFilmComponent } from './watching/films/pages/support-film/support-film.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PlayFilmComponent } from './watching/films/pages/play-film/play-film.co
     FilmDetailComponent,
     ButtonComponent,
     FilmsRelatedComponent,
-    PlayFilmComponent
+    PlayFilmComponent,
+    SupportFilmComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Film} from "../../model/film";
 import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
   selector: 'app-play-film',
@@ -9,25 +10,23 @@ import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 })
 export class PlayFilmComponent implements OnInit {
 
-  @Input() data!: Film
-  urlVideo?:SafeUrl
-  idVideo?: string
+  filmData: Film;
+  safeUrl?: SafeUrl
+  urlIframe?: string
   embed: string = "https://www.youtube.com/embed/"
 
-  constructor(private _sanitizer:DomSanitizer) {
-    this.data = {} as Film
-  }
-  ngOnInit(): void {
-    this.urlVideo = this._sanitizer.bypassSecurityTrustResourceUrl(this.formatVideo())
+  constructor(private _sanitizer: DomSanitizer, private route: ActivatedRoute) {
+    this.filmData = {} as Film
   }
 
-  formatVideo() {
-    var url = this.data.video.videoUrl
-    console.log(url)
-    this.idVideo = url.substring(+32)
-    var result = this.embed + this.idVideo + "?rel=0"
-    var temp = this.embed + "gNAdnYTcgUo&t" + "?rel=0"
-    console.log(result)
-    return result
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.urlIframe = this.embed + params['videoId'] + "?rel=0"
+      console.log(this.urlIframe)
+      this.safeUrl = this._sanitizer.bypassSecurityTrustResourceUrl(this.urlIframe)
+      }
+    )
   }
+
+
 }

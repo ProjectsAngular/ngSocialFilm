@@ -1,10 +1,8 @@
 <body class="bg-black mt-4">
-  <p class="fw-bold fs-1 text-light mx-5 mt-5">Films related...</p>
-  <div class="d-flex flex-wrap justify-content-around mx-5">
-    <div class="mb-sm-4 mb-4 mb-lg-3" *ngFor="let film of dataSource.data">
-      <app-card [data]="film"></app-card>
-    </div>
+<p class="fw-bold fs-1 text-light mx-5 mt-5">Films related...</p>
+<div class="d-flex flex-wrap justify-content-around mx-5">
+  <div class="mb-sm-4 mb-4 mb-lg-3" *ngFor="let film of dataSource.data">
+    <app-card [data]="film"></app-card>
   </div>
+</div>
 </body>
-
-
