@@ -5,6 +5,7 @@ import {FilmsComponent} from "./watching/films/pages/films/films.component";
 import {FilmDetailComponent} from "./watching/films/pages/film-detail/film-detail.component";
 import {PlayFilmComponent} from "./watching/films/pages/play-film/play-film.component";
 import {SupportFilmComponent} from "./watching/films/pages/support-film/support-film.component";
+import {SeriesComponent} from "./watching/series/pages/series/series.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path: 'films', component: FilmsComponent},
   {path: 'films/:id', component: FilmDetailComponent},
   {path: 'films/:id/watch', component: PlayFilmComponent},
-  {path:'films/:id/support', component:SupportFilmComponent}
+  {path: 'films/:id/support', component: SupportFilmComponent},
+
+  /**THESE PATH IS FOR SERIES**/
+  {path: 'series', component: SeriesComponent},
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ export class FilmDetailComponent implements OnInit {
   filmData: Film;
 
   componentName?: string = 'related';
+  switchButton?: boolean = true;
 
   constructor(private filmsServices: FilmsService, private route: ActivatedRoute, private router: Router) {
     this.filmData = {} as Film
@@ -40,7 +41,13 @@ export class FilmDetailComponent implements OnInit {
     this.router.navigate(['/films', element.id, 'watch'], {queryParams: {"videoId": idVideo}})
   }
 
-  onKey(componentName: string): void {
-    this.componentName = componentName;
+  changedComponentName(): void {
+    if (this.switchButton == true) {
+      this.componentName = 'support'
+      this.switchButton = false
+    } else {
+      this.componentName = 'related'
+      this.switchButton = true
+    }
   }
 }

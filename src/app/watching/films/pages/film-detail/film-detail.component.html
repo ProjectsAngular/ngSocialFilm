@@ -23,10 +23,16 @@
             <mat-icon class="m-0">play_circle_outline</mat-icon>
           </div>
         </button>
-        <button type="button" class="btn btn-light btn-sm h-75 m-3" (click)="onKey('support')">
-          <div class="d-flex align-items-center p-2">
-            <p class="m-0 fw-bold">Support</p>
-            <mat-icon>stars</mat-icon>
+        <button type="button" class="btn btn-light btn-sm h-75 m-3" (click)="changedComponentName()">
+          <div class="d-flex align-items-center p-2" [ngSwitch]="componentName">
+
+            <p class="m-0 fw-bold" *ngSwitchCase="'related'">Support</p>
+            <mat-icon *ngSwitchCase="'related'">stars</mat-icon>
+
+
+            <p class="m-0 fw-bold" *ngSwitchCase="'support'">Related</p>
+            <mat-icon *ngSwitchCase="'support'">theaters</mat-icon>
+
           </div>
         </button>
       </div>

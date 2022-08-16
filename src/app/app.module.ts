@@ -18,6 +18,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { FilmsRelatedComponent } from './watching/films/pages/films-related/films-related.component';
 import { PlayFilmComponent } from './watching/films/pages/play-film/play-film.component';
 import { SupportFilmComponent } from './watching/films/pages/support-film/support-film.component';
+import { SeriesComponent } from './watching/series/pages/series/series.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SupportFilmComponent } from './watching/films/pages/support-film/suppor
     ButtonComponent,
     FilmsRelatedComponent,
     PlayFilmComponent,
-    SupportFilmComponent
+    SupportFilmComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,
