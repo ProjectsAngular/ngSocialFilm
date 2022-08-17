@@ -6,11 +6,11 @@ import {Serie} from "../../model/serie";
 import {SeriesService} from "../../services/series.service";
 
 @Component({
-  selector: 'app-series',
-  templateUrl: './series.component.html',
-  styleUrls: ['./series.component.css']
+  selector: 'app-series-related',
+  templateUrl: './series-related.component.html',
+  styleUrls: ['./series-related.component.css']
 })
-export class SeriesComponent implements OnInit {
+export class SeriesRelatedComponent implements OnInit {
 
   dataSource: MatTableDataSource<Serie>;
 
@@ -24,4 +24,5 @@ export class SeriesComponent implements OnInit {
       console.log(response);
     });
   }
+
 }

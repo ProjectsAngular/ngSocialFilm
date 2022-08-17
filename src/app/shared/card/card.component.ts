@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Film} from "../../watching/films/model/film";
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,15 +8,17 @@ import {Router} from "@angular/router";
 })
 export class CardComponent implements OnInit {
 
-  @Input() data!: Film
+  @Input() data!: any
+  @Input() path!: string
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  onSelectFilm(element:Film){
-    this.router.navigate(['/films', element.id])
+  onSelect(element: any) {
+    this.path = '/' + this.path
+    this.router.navigate([this.path, element.id])
   }
 }

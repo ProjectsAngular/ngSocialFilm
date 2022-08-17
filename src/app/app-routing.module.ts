@@ -6,6 +6,7 @@ import {FilmDetailComponent} from "./watching/films/pages/film-detail/film-detai
 import {PlayFilmComponent} from "./watching/films/pages/play-film/play-film.component";
 import {SupportFilmComponent} from "./watching/films/pages/support-film/support-film.component";
 import {SeriesComponent} from "./watching/series/pages/series/series.component";
+import {SerieDetailComponent} from "./watching/series/pages/serie-detail/serie-detail.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
 
   /**THESE PATH IS FOR SERIES**/
   {path: 'series', component: SeriesComponent},
+  {path: 'series/:id', component: SerieDetailComponent},
 ];
 
 @NgModule({

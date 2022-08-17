@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Film} from "../../model/film";
@@ -22,6 +22,13 @@ export class FilmDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getFilm()
+  }
+  ngOnChanges():void{
+    this.getFilm()
+  }
+
+  getFilm(){
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(<string>params.get('id'));
 
@@ -50,4 +57,5 @@ export class FilmDetailComponent implements OnInit {
       this.switchButton = true
     }
   }
+
 }

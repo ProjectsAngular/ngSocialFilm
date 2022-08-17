@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {Film} from "../../model/film";
+import {DataSource} from "@angular/cdk/collections";
 
 @Component({
   selector: 'app-films',

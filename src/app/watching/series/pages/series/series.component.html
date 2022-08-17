@@ -1,1 +1,13 @@
-<p>series works!</p>
+<body class="bg-black">
+<div class="p-5 text-center">
+  <h1 class="mb-0 text-white text-capitalize">Watching the most amazing series in SocialFilm</h1>
+  <h4 class="mb-3 text-light text-opacity-75 text-opacity-75">By. Enzo Livelli</h4>
+</div>
+
+<div class="d-flex flex-wrap justify-content-around bg-black">
+  <div class="mb-sm-4 mb-4 mb-lg-3" *ngFor="let serie of dataSource.data">
+    <app-card [data]="serie" [path]="'series'"></app-card>
+  </div>
+</div>
+
+</body>
